@@ -1,5 +1,5 @@
 const ShopItem = (item) => {
-    const {item:{brand, title, description, descriptionFull, price, currency}} = item;
+    const {item: {brand, title, description, descriptionFull, price, currency}} = item;
 
     return (
         <div className="main-content">
