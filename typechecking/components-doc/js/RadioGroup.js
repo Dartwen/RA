@@ -14,5 +14,14 @@ const RadioGroup = props => {
         ))}
       </div>
     </div>
-  )
+  );
+};
+
+
+RadioGroup.propTypes = {
+    onChange: PropTypes.func.isRequired,
+
+    label: PropTypes.string.isRequired,
+    list: PropTypes.arrayOf(PropTypes.string).isRequired,
+    name: PropTypes.string.isRequired,
 };
