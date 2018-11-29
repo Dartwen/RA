@@ -68,7 +68,7 @@ const birthdayProfilePropType = (props, propName, componentName)  => {
 
 const urlProfilePropType = (props, propName, componentName)  => {
     const url = props[propName];
-    const isUrl = (typeof url === 'string') &&  /^(https:\/\/vk\.com\/)(\(id[0-9]+|[A-Za-z0-9_-]+)/g.test(url);
+    const isUrl = (typeof url === 'string') &&  /^(https:\/\/vk\.com\/)(\(id[0-9]+|[A-Za-z0-9_-]+\s)/.test(url);
 
     if (!isUrl) {
         return new Error(`Invalid prop ${propName} supplied to ${componentName}. Validation failed.`);
