@@ -1,9 +1,13 @@
 class Cart extends React.Component {
 
-  render() {
-    return (
-      <CartView {...this.props} />
-    );
-  }
+    componentWillReceiveProps(nextProps) {
+        return nextProps.isOpen && nextProps.items.length !== 0 || nextProps.isOpen !== this.props.isOpen;
+    }
+
+    render() {
+        return (
+            <CartView {...this.props} />
+        );
+    }
 
 }
