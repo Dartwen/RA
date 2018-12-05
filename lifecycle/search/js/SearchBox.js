@@ -4,16 +4,26 @@ class SearchBox extends React.Component {
     super(props);
     this.state = { fixed: false };
   }
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.setPosition);
+    }
 
-  render() {
+    componentDidMount() {
+        window.addEventListener('scroll', this.setPosition.bind(this));
+    }
+
+
+    render() {
     return <SearchBoxView fixed={this.state.fixed} />
   }
 
   isFixed() {
-    return undefined;
+      return document.querySelector('.search-box').getBoundingClientRect().top <= 0 && window.pageYOffset >= 164
   }
 
   setPosition() {
-    return undefined;
+   this.setState({
+       fixed: this.isFixed()
+   });
   }
 }
