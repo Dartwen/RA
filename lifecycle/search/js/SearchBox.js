@@ -16,17 +16,17 @@ class SearchBox extends React.Component {
     }
 
     isFixed() {
-        return this.searchBar.offsetTop < window.pageYOffset;
+        return this.searchBar.getBoundingClientRect().top <= 0 && window.pageYOffset >= 164;
     }
 
-     setPosition = () => {
-         const currentState = this.state.fixed;
-         const newState = this.isFixed();
-         if(currentState !== newState) {
-             this.setState({
-                 fixed: newState
-             });
-         }
+    setPosition = () => {
+        const currentState = this.state.fixed;
+        const newState = this.isFixed();
+        if (currentState !== newState) {
+            this.setState({
+                fixed: newState
+            });
+        }
     };
 
     render() {
