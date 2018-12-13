@@ -1,9 +1,9 @@
 const MortgateCalculator = () => (
   <div>
     <form action="">
-      <Autocomplete/>
-      <Inputs/>
-      <Button/>
+      <AutocompleteTest />
+      <InputTest />
+      <ButtonToolbox />
     </form>
   </div>
 );
