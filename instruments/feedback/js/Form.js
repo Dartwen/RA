@@ -6,10 +6,10 @@ class Form extends React.Component {
       name: '',
       text: '',
       done: false,
-    }
+    };
 
-    this.send = this.send.bind(this)
-    this.handleNameChange = this.handleNameChange.bind(this)
+    this.send = this.send.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this)
   }
 
@@ -21,12 +21,10 @@ class Form extends React.Component {
   }
 
   handleForm() {
-    setTimeout(function() {
-      const { name, text } = this.state
-      console.log(name, text)
+      const { name, text } = this.state;
+      console.log(name, text);
 
       this.setState({ done: false })
-    }, 1000)
   }
 
   handleNameChange(e) {
@@ -38,9 +36,7 @@ class Form extends React.Component {
   }
 
   render() {
-    const { done } = this.state
-
-    console.log(this.state)
+    const { done } = this.state;
 
     return (
       <main className="container">
